@@ -57,6 +57,7 @@ def contact(request):
     return render(request, 'mailing/contact.html', context)
 
 
+@login_required
 def main(request):
     customers = len(Customer.objects.all().distinct('email'))
     post = Post.objects.filter(is_published=True).order_by('?')
@@ -121,6 +122,7 @@ class MailingDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView)
     model = Mailing
     permission_required = 'mailing.delete_mailing'
     success_url = reverse_lazy('mailing:list')
+
 
 
 

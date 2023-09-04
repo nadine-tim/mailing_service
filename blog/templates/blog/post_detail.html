@@ -4,7 +4,7 @@
 <div class="col-12">
     <div class="card mb-3">
         <div class="card-body">
-            <img src="{{ object.img|mediapath }}" class="card-img-top" alt="..."/>
+            <img src="{{ object.img|mediapath_filter }}" class="card-img-top" alt="..."/>
             <h5 class="card-title">{{ object.title }}</h5>
             <p class="card-text">{{object.content| title}}</p>
             <p class="card-text">{{ object.description }}</p>
